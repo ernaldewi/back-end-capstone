@@ -1,4 +1,5 @@
 const PatientModel = require("../models/tb_patiens.js");
+
 // CREATE
 const createNewPatient = async (req, res) => {
   console.log(req.body);
