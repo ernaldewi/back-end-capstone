@@ -1,6 +1,7 @@
 require("dotenv").config();
 const PORT = process.env.PORT || 5000;
 const express = require("express");
+const cors = require("cors");
 
 const middlewareLogRequest = require("./middleware/log.js");
 const homeRoutes = require("./routes/home.js");
@@ -12,6 +13,7 @@ const app = express();
 
 app.use(middlewareLogRequest);
 app.use(express.json());
+app.use(cors());
 
 // app.method(path, handler) - STATIC RESTFUL API ENDPOINT
 app.use("/api", homeRoutes);
